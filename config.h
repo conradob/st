@@ -7,7 +7,7 @@
  */
 static char *font = "mono:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
-static int borderpx = 2;
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -108,34 +108,32 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.9;
 
-/* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	"#cc241d",
-	"#98971a",
-	"#d79921",
-	"#458588",
-	"#b16286",
-	"#689d6a",
-	"#a89984",
-	"#928374",
-	"#fb4934",
-	"#b8bb26",
-	"#fabd2f",
-	"#83a598",
-	"#d3869b",
-	"#8ec07c",
-	"#ebdbb2",
+	"#0C1414", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	"#C4797D",
+	"#0FAE55",
+	"#999D99",
+	"#97938F",
+	"#1BB45F",
+	"#8B8565",
+	"#c5c6c5",
+	"#898a89",
+	"#EEB4B7",
+	"#36B46D",
+	"#BFC1BF",
+	"#C8C3BF",
+	"#1BB45F",
+	"#B0AA8B",
+	"#c5c6c5",
 	[255] = 0,
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#add8e6", /* 256 -> cursor */
-	"#555555", /* 257 -> rev cursor*/
-	"#282828", /* 258 -> bg */
-	"#ebdbb2", /* 259 -> fg */
+	"#c5c6c5", /* 256 -> cursor */
+	"#a0e4b2", /* 257 -> rev cursor*/
+	"#020C0A", /* 258 -> bg */
+	"#c5c6c5", /* 259 -> fg */
 };
-
 
 /*
  * Default colors (colorname index)
