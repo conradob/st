@@ -18,8 +18,8 @@ static int borderpx = 0;
  * 5: value of shell in config.h
  */
 static char *shell = "/bin/sh";
-char *utmp = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
+char *utmp = NULL;
 
 /* identification sequence returned in DA and DECID */
 char *vtiden = "\033[?6c";
@@ -110,20 +110,21 @@ unsigned int tabspaces = 8;
 /* bg opacity */
 float alpha = 0.9;
 
+
 static const char *colorname[] = {
 	"#0C1414", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	"#C4797D",
-	"#0FAE55",
-	"#999D99",
-	"#97938F",
-	"#1BB45F",
-	"#8B8565",
-	"#c5c6c5",
+	"#C4797D", /* red */
+	"#0FAE55", /* green */
+	"#999D99", /* yellow */
+	"#146F9A", /* blue */
+	"#1BB45F", /* magenta */
+	"#8B8565", /* cyan */
+	"#c5c6c5", /* grey */
 	"#898a89",
 	"#EEB4B7",
 	"#36B46D",
 	"#BFC1BF",
-	"#C8C3BF",
+	"#5598B8",
 	"#1BB45F",
 	"#B0AA8B",
 	"#c5c6c5",
@@ -221,8 +222,9 @@ static MouseShortcut mshortcuts[] = {
 };
 
 /* Internal keyboard shortcuts. */
-#define MODKEY Mod1Mask
-#define TERMMOD (Mod1Mask|ShiftMask)
+#define MODKEY Mod4Mask
+#define ALTKEY Mod1Mask
+#define TERMMOD (Mod4Mask|ShiftMask)
 
 MouseKey mkeys[] = {
 	/* button               mask            function        argument */
@@ -249,9 +251,9 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
 	{ MODKEY,               XK_Home,        zoomreset,      {.f =  0} },
-	{ MODKEY,               XK_c,           clipcopy,       {.i =  0} },
+	{ ALTKEY,               XK_c,           clipcopy,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
-	{ MODKEY,               XK_v,           clippaste,      {.i =  0} },
+	{ ALTKEY,               XK_v,           clippaste,      {.i =  0} },
 	{ XK_ANY_MOD,		Button2,	selpaste,	{.i =  0} },
 	{ MODKEY,               XK_Num_Lock,    numlock,        {.i =  0} },
 	{ MODKEY,               XK_Control_L,   iso14755,       {.i =  0} },
